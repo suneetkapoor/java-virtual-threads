@@ -57,7 +57,7 @@ The use of Thread.sleep(1000) allows enough time for all Virtual Threads to comp
 
 
 # Example 5: Potential deadlock 
-
+https://gist.github.com/DanielThomas/0b099c5f208d7deed8a83bf5fc03179e
 
 
 # Conclusion
