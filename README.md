@@ -56,7 +56,8 @@ Parallel Processing: This example demonstrates how to split a computational task
 The use of Thread.sleep(1000) allows enough time for all Virtual Threads to complete their work before printing the total sum.
 
 
-# Example 5: Potential deadlock when a virtual thread and other threads compete for the same lock
+# Example 5: Potential deadlock 
+
 
 
 # Conclusion
