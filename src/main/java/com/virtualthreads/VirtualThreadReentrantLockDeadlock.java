@@ -6,11 +6,12 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-    /**
-     * This example demonstrates a scenario where a {@link ReentrantLock} can potentially lead to deadlock
-     * when a virtual thread and other threads compete for the same lock, especially if the threads are
-     * configured differently in terms of synchronization.
-     */
+
+// This example demonstrates potential for deadlock on a {@link ReentrantLock} when there is both a synchronized and
+// * non-synchronized path to that lock, which can allow a virtual thread to hold the lock, but
+// * other pinned waiters to consume all the available workers.
+
+
     public class VirtualThreadReentrantLockDeadlock {
 
         public static void main(String[] args) {
