@@ -59,5 +59,5 @@ The use of Thread.sleep(1000) allows enough time for all Virtual Threads to comp
 # Example 5: Potential deadlock when a virtual thread and other threads compete for the same lock
 
 
-**Conclusion**
+# Conclusion
 Project Loom and Virtual Threads bring powerful new capabilities to Java, enabling efficient management of high concurrency with simplified code. These examples demonstrate how Virtual Threads can be used to handle concurrent tasks, manage blocking I/O, and perform parallel processing, making Java a more versatile language for modern applications.
