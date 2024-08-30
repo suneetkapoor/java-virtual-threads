@@ -1,4 +1,4 @@
-package com.sk.virtualthreads;
+package src.main.java.com.virtualthreads;
 
 import java.util.stream.IntStream;
 

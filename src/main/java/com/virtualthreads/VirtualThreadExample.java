@@ -1,4 +1,4 @@
-package com.sk.virtualthreads;
+package src.main.java.com.virtualthreads;
 
 public class VirtualThreadExample {
     public static void main(String[] args) {
