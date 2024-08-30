@@ -30,10 +30,10 @@ import java.util.stream.Stream;
                 }
             };
 
-            Thread primaryVirtualThread = Thread.ofVirtual().name("primary-virtual").start(lockTask);
+            Thread unpinnedVirtualThread = Thread.ofVirtual().name("unpinned-virtual").start(lockTask);
 
-            List<Thread> competingThreads = IntStream.range(0, Runtime.getRuntime().availableProcessors())
-                    .mapToObj(i -> Thread.ofVirtual().name("competing-thread-" + i).start(() -> {
+            List<Thread> pinnedThreads = IntStream.range(0, Runtime.getRuntime().availableProcessors())
+                    .mapToObj(i -> Thread.ofVirtual().name("pinned-thread-" + i).start(() -> {
                         if (enableSync) {
                             synchronized (new Object()) {
                                 lockTask.run();
@@ -45,7 +45,7 @@ import java.util.stream.Stream;
 
             resourceLock.unlock();
 
-            Stream.concat(Stream.of(primaryVirtualThread), competingThreads.stream()).forEach(thread -> {
+            Stream.concat(Stream.of(unpinnedVirtualThread), pinnedThreads.stream()).forEach(thread -> {
                 try {
                     if (!thread.join(Duration.ofSeconds(3))) {
                         throw new RuntimeException("Potential deadlock detected");
