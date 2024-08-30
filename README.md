@@ -36,8 +36,8 @@ join(): This method makes the main thread wait until the Virtual Thread finishes
 This example demonstrates how Virtual Threads can be used to execute multiple tasks concurrently, making it easy to handle a large number of tasks.
 
 Explanation:
-In this example, we create 100,000 Virtual Threads, each executing a simple task of printing a message. This demonstrates the scalability of Virtual Threads, as such a large number of threads would be difficult to manage using traditional Platform Threads.
-The Thread.sleep(2000) call is used to give the Virtual Threads time to complete their execution before the main thread exits.
+In this example, we create 200,000 Virtual Threads, each executing a simple task of printing a message. This demonstrates the scalability of Virtual Threads, as such a large number of threads would be difficult to manage using traditional Platform Threads.
+The Thread.sleep(4000) call is used to give the Virtual Threads time to complete their execution before the main thread exits.
 
 
 # Example 3: Blocking I/O with Virtual Threads
@@ -53,7 +53,7 @@ This is an example of using Virtual Threads to parallelize a computational task,
 
 Explanation:
 Parallel Processing: This example demonstrates how to split a computational task into multiple parts, each handled by a Virtual Thread. The threads concurrently add numbers to an AtomicLong, which safely accumulates the result.
-The use of Thread.sleep(1000) allows enough time for all Virtual Threads to complete their work before printing the total sum.
+The use of Thread.sleep(2000) allows enough time for all Virtual Threads to complete their work before printing the total sum.
 
 
 # Example 5: Potential deadlock 
